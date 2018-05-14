@@ -100,18 +100,19 @@ document.getElementById("downRight").innerHTML = rLine;
 
 function downLeft(pHeight, pColorEven, pColorOdd, pSymbol){
 var rLine ="";
-for (i=1;i <=pHeight;i++){
+for (i=pHeight;i > 0;i--){
  
 rLine +="<p>";
  
-  for(x=pHeight; x >0;x--)
+  //fill in line
+  for(x=1; x<=pHeight-i;x++)
   {
     //rLine +="-"
     rLine +="<span class='space'>" + pSymbol +"</span>";
   }
 
 //Create each line on the Rhombus
-for(j=x;j<pHeight;j++){
+for(j=0;j<i;j++){
 
   
 //Is the position even or odd so we change the color
@@ -128,7 +129,7 @@ rLine +="</p>";
 
 }
 
-document.getElementById("downRight").innerHTML = rLine;
+document.getElementById("downLeft").innerHTML = rLine;
 }
 
 
